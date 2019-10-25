@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp行情记录</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+</head>
+<body style="margin: 20px">
+
+<h4>
+        <a href="/ctp/"><< 返回</a>
+</h4>
+<h2 >行情列表</h2>
+
+<table class="table-striped table-hover" border="1">
+    <thead>
+    <th >Code</th>
+    <th >Exchange</th>
+    <th>LastPrice</th>
+    <th>DateTime</th>
+    <th>Ask1</th>
+    <th>Ask2</th>
+    <th>Ask3</th>
+    <th>Bid1</th>
+    <th>Bid2</th>
+    <th>Bid3</th>
+    <th>最高限价</th>
+    <th>最低限价</th>
+    <th>Volume</th>
+    <th>手续费</th>
+    <th>保证金</th>
+    <th>乘数</th>
+    </thead>
+    {% for c in codes %}
+    <tr >
+        <td id="{{ c.code }}_code">{{ c.code }}</td>
+        <td id="{{ c.exchange }}_exchange">{{ c.exchange }}</td>
+        <td id="{{ c.code }}_lastprice"></td>
+        <td style="width: 200px" id="{{ c.code }}_datetime"></td>
+        <td id="{{ c.code }}_ask1"></td>
+        <td id="{{ c.code }}_ask2"></td>
+        <td id="{{ c.code }}_ask3"></td>
+        <td id="{{ c.code }}_bid1"></td>
+        <td id="{{ c.code }}_bid2"></td>
+        <td id="{{ c.code }}_bid3"></td>
+        <td id="{{ c.code }}_uplimit"></td>
+        <td id="{{ c.code }}_downlimit"></td>
+        <td id="{{ c.code }}_volume"></td>
+        <td id="{{ c.code }}_commission"></td>
+        <td id="{{ c.code }}_margin"></td>
+        <td id="{{ c.code }}_lot"></td>
+    </tr>
+    {% endfor %}
+
+</table>
+<script>
+    var subscribed_symbols = "{{ subscribed_symbols }}"; // 订阅合约列表 a,b,c
+    var quotes_server = "{{ quotes_server }}" // http://127.0.0.1:18808/quotes
+</script>
+
+<script type="text/javascript" src="/static/js/quotes.js" ></script>
+</body>
+</html>

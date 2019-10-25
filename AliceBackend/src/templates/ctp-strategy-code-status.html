@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp策略清单</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+
+</head>
+<body style="margin: 20px">
+<script>
+
+function resetData() {
+    if( window.confirm("确定要清除？") ) {
+        window.location.href = "/ctp/strategy/code/param/reset?strategy_id={{ strategy_id }}&code={{ code }}";
+    }
+}
+</script>
+
+<h2 >策略合约运行状态</h2>
+<h4>{{ strategy_id }} / {{ code }}</h4>
+<button class="btn-default btn-info" onclick="resetData()"> 重置合约参数 </button>
+<p>
+重置参数会清除合约运行状态，回到最初合约设置。
+</p>
+<ul>
+    {% for e in cs  %}
+    <li>
+        <h6>
+            <span>{{ e.name }}</span> =  <span>{{ e.value }}</span>
+        </h6>
+    </li>
+    {% endfor %}
+
+
+</ul>
+
+
+</body>
+</html>

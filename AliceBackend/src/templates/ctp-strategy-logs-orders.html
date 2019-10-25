@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp行情记录</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+</head>
+<body style="margin: 20px">
+
+<h4>
+        <a href="/ctp/conn-list"><< 返回</a>
+</h4>
+<h2 >策略日志/交易信号</h2>
+<code >
+启动加载最近100条记录，后续实时推送
+</code>
+<h4>
+策略编号: {{ strategy_id }}
+</h4>
+
+<table id="order_table" border="1">
+    <thead>
+        <th>Time</th>
+        <th>strategy</th>
+        <th>code</th>
+        <th>oc</th>
+        <th>direction</th>
+        <th>price</th>
+        <th>vol</th>
+    </thead>
+    {% for r in orders %}
+    <tr >
+        <td >{{ r.issue_time }}</td>
+        <td >{{ r.strategy_id }}</td>
+        <td >{{ r.code }}</td>
+        <td >{{ r.oc }}</td>
+        <td >{{ r.direction }}</td>
+        <td >{{ r.price }}</td>
+        <td >{{ r.vol }}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+<script>
+    var strategy_id = "{{ strategy_id }}";
+    var log_server = "{{ log_server }}"
+</script>
+<script type="text/javascript" src="/static/js/logs-order.js" ></script>
+
+</body>
+</html>

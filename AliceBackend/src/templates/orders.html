@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>交易策略系统-订单测试</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+</head>
+<body  >
+<h2>订单测试</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <label>Product and Account</label>
+                <select id="product_account">
+                    {% for acc in accounts %}
+                    <option value="{{acc.product + '.' + acc.account}}">{{acc.product + '.' + acc.account}}</option>
+
+                    {% endfor %}
+                </select>
+
+                <label>Order Types</label>
+                <select id="orderType">
+                    <option value="buy">Buy</option>
+                    <option value="sell">Sell</option>
+                    <option value="short">Short</option>
+                    <option value="cover">Cover</option>
+                </select>
+                <label>合约代码</label>
+                <input id="symbol" value="CY810">
+                <label>价格</label>
+                <input id="price" value="24855">
+                <label>数量</label>
+                <input id="volumn" value="1">
+            </div>
+
+            <div>
+                <button id="SendOrder">发单</button>
+                </div>
+        </div>
+
+        <div class="col-md-4 col-md-offset-4">
+            <div>
+                <label>订单代码</label>
+                <input id="orderId" value="">
+
+            </div>
+            <div>
+                <label>撤除委托单</label>
+                <button id="CancelOrder">撤单</button>
+            </div>
+
+            <div>
+                <label>一键撤除委托单</label>
+                <button id="CancelAllOrders">撤除当前账户的委托单</button>
+            </div>
+            <div>
+                <button id="CancelAllOrdersIgnoreAccount">撤除所有账户的委托单</button>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-md-offset-4">
+
+            <div>
+                <label>平仓(所有账户)</label>
+                <button id="SellOrBuyCoverAll">一键平仓</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script>
+    var url = '{{ http_url }}';
+</script>
+<script type="text/javascript" src="/static/js/orders.js"></script>
+</html>
+
+
+
+
+

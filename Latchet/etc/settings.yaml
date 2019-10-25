@@ -1,0 +1,170 @@
+
+app_name: 'Latchet-Service'
+project_name: 'testProject'
+project_version: '0.1'
+options:
+  product: 'future'
+  account: 'htqh-02'
+  mode:   'dev'
+logging:
+  level: DEBUG
+  format: '%(levelname)s %(asctime)s  %(message)s'
+  datetime_format: ''
+  message_format: '%(project_name)s:%(project_version)s %(app_id)s %(_filename)s:%(_lineno)d [%(tags)s] '
+
+  filters:
+    trans:
+      tag: 'TRANS:'   # tag 过滤
+  handlers:
+    - type: file
+#      class: 'mantis.fundamental.loggin.handler.LogFileHandler'
+      enable: true
+      filename: 'server.log'
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+
+    - type: console
+      enable: true
+
+http_trace: #自动日志记录
+  level: DEBUG
+  request:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+  response:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+datasources:
+  - name: 'mongodb'
+    class: 'mantis.fundamental.nosql.mongo.Datasource'
+    host: 'mongodb'
+#    port: 27017
+    port: 27018
+    dbname:
+    user:
+    password:
+    enable: true
+
+  - name: 'zk_1'
+    type: 'zookeeper'
+    enable: false
+    hosts: 'localhost:2181'
+    root: '/camel'
+
+  - name: 'redis'
+    class: 'mantis.fundamental.redis.datasource.Datasource'
+    host: 'redis'
+    port: 6379
+#    port: 6380
+    password: ''
+    db: 0
+    enable: true
+
+message_brokers:
+  - name: 'kafka_1'
+    class: 'mantis.fundamental.kafka.MessageBroker'
+    enable: false
+    hosts: 'localhost:9092'
+    zookeepers: 'localhost:2181'
+    channels:
+      - name: 'test'
+        group: 'abcdef'  # simple_consumer if group is null
+        handler:  'access.kafka.test.get_message' # last unit< get_message> is function object
+        enable: true
+        type: 'queue'
+
+  - name: 'redis'
+    class: 'mantis.fundamental.redis.broker.MessageBroker'
+    host: 'redis'
+    port: 6379
+    password: ''
+    db: 0
+    enable: true
+    channels:
+#      - name: 'future_ctp_tick_*'
+      - name: 'ctp.tick.pub_*'
+        handler: 'handler.get_ctp_symbol_ticks'
+        enable: true
+        type: 'pubsub' # or queue
+        data:
+          ns_name: '/quotes'  # 此处通道接收时候分派给指定的ns_name ,必须与 main.gateway定义一致
+
+      - name: 'strategy_logs_message$*'
+        handler: 'handler.get_ctp_strategy_logs'
+        enable: true
+        type: 'pubsub' # or queue
+        data:
+          ns_name: '/strategy-logs-message'  # 此处通道接收时候分派给指定的ns_name ,必须与 main.gateway定义一致
+
+services:
+  - name: 'http'
+    class: 'mantis.fundamental.flask.service.FlaskService'
+    enable: true
+    block: false
+    cfgs:
+      SQLALCHEMY_DATABASE_URI : 'sqlite:////tmp/test.db'
+      SQLALCHEMY_BINDS:
+      SQLALCHEMY_TRACK_MODIFICATIONS : true
+      SQLALCHEMY_COMMIT_ON_TEARDOWN : true
+      SECRET_KEY : "abc"
+      TEMPLATES_AUTO_RELOAD: true
+      DEBUG: true
+      SEND_FILE_MAX_AGE_DEFAULT: 0
+    http:
+#      host : '172.16.109.237'
+      host : ''
+      port : 18808
+      threaded: false
+      debug: true
+      websocket: true
+
+    blueprints:
+      - package: 'http'
+        url: '/v1'
+        name: 'v1'
+        register: true
+        modules:
+          - name: 'tests'
+            url: '/quotes'
+            routes:
+              - url: '/ctp'                    # url name
+                name: 'ctp_index'   # function name
+                methods: 'GET'
+
+  - name:       'main'
+    id:     'latchet-server'
+    enable:     true
+    class:      'main.MainService'
+    gateway:
+      - name: '/quotes'
+        class: 'http.gateway.SubscribeChannel'
+        event: 'data'  # 消息发送的事件类型（js端将响应此事件作为消息接收)
+
+      - name: '/strategy-logs-message'
+        class: 'http.gateway.SubscribeChannel'
+        event: 'data'  # 消息发送的事件类型（js端将响应此事件作为消息接收)
+
+      - name: '/strategy-logs-trade'  # 触发交易信号
+        class: 'http.gateway.SubscribeChannel'
+        event: 'data'  # 消息发送的事件类型（js端将响应此事件作为消息接收)
+
+    fanout:
+      - name: 'logging'
+        channels:
+          - 'redis/trade.log.{service_type}/queue'
+          - 'redis/trade.log.{service_type}.{service_id}/pubsub'

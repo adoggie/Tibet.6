@@ -1,0 +1,39 @@
+http.port=17001
+
+
+http.document_root=/tmp/smartbox/http
+
+query_interval = 2
+
+
+ctp.user_id=
+ctp.password=
+ctp.broker_id=
+ctp.con_path= ./cons
+ctp.md_addr= tcp://180.166.1.17:41313
+ctp.td_addr= tcp://180.169.75.194:41305
+ctp.require_auth=true
+
+ctp.product_info= .0
+ctp.auth_code =
+ctp.sub_instruments = m1909,AP910
+
+redis.host= 127.0.0.1
+redis.port= 6379
+redis.user=
+redis.password=
+redis.db=0
+
+
+mongodb.host=
+mongodb.port=
+mongodb.user=
+mongodb.password=
+
+ctp.pub_depthmarket = ctp.tick.pub_
+ctp.list_depthmarket = ctp.tick.list_all
+ctp.last_depthmarket = ctp.tick.dm_
+
+log.debug = 1
+
+ctp.pubchan_event_name = zsqh-prd

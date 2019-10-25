@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp行情记录</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+</head>
+<body style="margin: 20px">
+<h4>
+        <a href="/ctp/conn-list"><< 返回</a>
+</h4>
+<h2 >委托列表</h2>
+
+<h4>
+ConnUrl: {{ conn_id }}
+</h4>
+
+<table class="table-striped table-hover" border="1">
+    <thead>
+    <th >合约</th>
+    <th>方向</th>
+    <th>价格</th>
+    <th>数量</th>
+    <th>有效期TC</th>
+    <th>成交量VC</th>
+    <th>最小成交量</th>
+    <th>触发条件CC</th>
+    <th>止损价StopPrice</th>
+    <th>请求编号</th>
+    <th>本地报单编号</th>
+    <th>交易所代码</th>
+    <th>交易日</th>
+    <th>报单编号</th>
+    <th>报单类型</th>
+    <th>今成交数量</th>
+    <th>剩余数量</th>
+    <th>委托时间</th>
+    <th>序号</th>
+    <th>前置编号</th>
+    <th>会话编号</th>
+    <th>UserNO</th>
+    <th>TransNO</th>
+
+    <th>状态信息</th>
+
+
+
+    </thead>
+    {% for p in orders %}
+    <tr >
+        <td >{{ p.InstrumentID }}</td>
+        <td >{{ p.Direction }}</td>
+        <td >{{ p.LimitPrice }}</td>
+        <td >{{ p.VolumeTotalOriginal }}</td>
+        <td >{{ p.TimeCondition }}</td>
+        <td >{{ p.VolumeCondition }}</td>
+        <td >{{ p.MinVolume }}</td>
+        <td >{{ p.ContingentCondition }}</td>
+        <td >{{ p.StopPrice }}</td>
+        <td >{{ p.RequestID }}</td>
+        <td >{{ p.OrderLocalID }}</td>
+        <td >{{ p.ExchangeID }}</td>
+        <td >{{ p.TradingDay }}</td>
+        <td >{{ p.OrderSysID }}</td>
+        <td >{{ p.OrderType }}</td>
+        <td >{{ p.VolumeTraded }}</td>
+        <td >{{ p.VolumeTotal }}</td>
+        <td >{{ p.InsertTime }}</td>
+        <td >{{ p.SequenceNo }}</td>
+        <td >{{ p.FrontID }}</td>
+        <td >{{ p.SessionID }}</td>
+
+        <td >A#{{ p.FrontID  }}#{{ p.SessionID }}#{{ p.OrderRef }}</td>
+        <td >B#{{ p.ExchangeID }}#{{ p.OrderSysID }}</td>
+
+        <td >{{ p.StatusMsg }}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

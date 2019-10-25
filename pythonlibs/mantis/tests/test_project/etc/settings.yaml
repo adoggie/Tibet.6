@@ -1,0 +1,207 @@
+
+app_name: 'testModule'
+project_name: 'testProject'
+project_version: '0.1'
+
+logging:
+  level: DEBUG
+  format: '%(levelname)s %(asctime)s  %(message)s'
+  message_format: '%(project_name)s:%(project_version)s %(app_id)s %(_filename)s:%(_lineno)d [%(tags)s] '
+
+  filters:
+    trans:
+      tag: 'TRANS:'   # tag 过滤
+  handlers:
+    - type: file
+      enable: true
+      filename: 'server.log'
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+
+    - type: file
+      enable: true
+      filename: 'trans.log'   #运单日志跟踪
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+      filter: 'trans'
+
+    - type: logtail
+      enable: false
+      logstore: 'abc'
+      access_token: 'xxxx'
+      scret_key: 'xxxx'
+      uri: 'xxxx'
+
+    - type: console
+      enable: false
+
+http_trace: #自动日志记录
+  level: DEBUG
+  request:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+  response:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+celery_trace: # celery 调用日志记录
+  level: 'DEBUG'
+  client_max_size: 500 # 0 :不记录数据参数
+  server_max_size: 500 # 日志记录 最大数据包长度
+
+
+plugins:
+#  - "kafka_1"
+#  - "redis_1"
+  - "flask_1"
+#  - "celery_1"
+#  - "qpid_1"
+#  - "rabbitmq_1"
+#  - "zk_1"
+#  - "django"
+#  - "mongodb"
+
+mongodb:
+  type: 'mongodb'
+  host:
+  port:
+  dbname:
+  user:
+  password:
+
+django:
+  type: 'django'
+  django_settings: 'project.settings'
+  http:
+    host : '127.0.0.1'
+    port : 5555
+    threaded: false
+    debug: true
+
+zk_1:
+  type: 'zookeeper'
+  enable: false
+  hosts: 'localhost:2181'
+  root: '/camel'
+
+rabbitmq_1:
+  type: 'rabbitmq'
+  enable: false
+
+qpid_1:
+  type: 'qpid'
+  queues:
+    - name: 'mq_mess'
+      type: 'qpid'
+      host: 'ytodev2'
+      port: 5672
+      address: "mq_3; {create: always, node: {type: topic,durable:false}}"
+      exec_thread_nr: 1 #执行线程数
+      entry:  'access.amqp.channel.data_entry' # last unit< get_message> is function object
+      enable: true
+      read: true
+      write: false
+
+
+celery_1:
+  type: 'celery'
+  channels:
+    - name: 'test_server'
+      route:
+        type: 'redis'
+        broker: 'redis://127.0.0.1:6379/6'       #request queue
+        backend: 'redis://127.0.0.1:6379/7'
+      exchange:
+        name: 'tasks'
+        type: 'direct' # topic,fanout,headers,direct
+      queues:
+        - name: 'sub_dash'
+          routing_key: 'sub_dash'
+      tasks:
+        - name: 'hello'
+          path: 'access.celery.hello'
+          queue: 'sub_dash'
+          routing_key: 'sub_dash'
+      default_queue:  'default'
+
+
+kafka_1:
+  type: 'kafka'
+  topics:
+    - topic: 'test'
+      group: 'abcdef'  # simple_consumer if group is null
+      hosts: 'localhost:9092'
+      zookeepers: 'localhost:2181'
+      exec_thread_nr: 1 #执行线程数
+      entry:  'access.kafka.test.get_message' # last unit< get_message> is function object
+      enable: true
+      corutine: false # 是否启用协程
+      access: 'read,write' # 访问模式，用于发送 或接收
+
+flask_1:
+  type: 'flask'
+  run_mode: 'wsgi'
+  cfgs:
+    SQLALCHEMY_DATABASE_URI : 'sqlite:////tmp/test.db'
+    SQLALCHEMY_BINDS:
+    SQLALCHEMY_TRACK_MODIFICATIONS : true
+    SQLALCHEMY_COMMIT_ON_TEARDOWN : true
+    SECRET_KEY : "abc"
+  http:
+    host : '127.0.0.1'
+    port : 3333
+    threaded: false
+    debug: true
+  routes:
+    - package: 'access.api.v1'
+      url: '/v1'
+      name: 'v1'
+      register: true
+      modules:
+        - name: 'car'
+          url: '/car'
+          routes:
+            - url: '/cat'   # url name
+              name: 'cat'   # function name
+              methods: 'GET,POST'
+
+redis_1:
+  type: 'redis'
+  backends:
+    - name: 'default'
+      host: '127.0.0.1'
+      port: 5603
+      password: '1111'
+      enable: true
+
+inspection:
+  health_interval: 20
+
+cas_config:
+  cas_server: 'https://localhost:80'
+  success_login: '/success_login'
+
+
+
+# qpid-receive -b localhost:5672 -a "mq_test;{create:always,node:{type:queue,durable:true}}"
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+
+http.port=17001
+
+
+http.document_root=/tmp/smartbox/http
+
+query_interval = 2
+
+#ctp.user_id=
+ctp.user_id=
+ctp.password=
+#ctp.password=
+ctp.broker_id= 9999
+ctp.con_path= ./cons
+#ctp.md_addr= tcp://180.168.146.187:10011
+#ctp.td_addr= tcp://172.50.1.1:41205
+
+#ctp.td_addr= tcp://180.168.146.187:10001
+#ctp.td_addr= tcp://218.202.237.33:10002
+
+#simnow
+ctp.td_addr= tcp://180.168.146.187:10100
+
+#第一组:Trade Front:180.168.146.187:10100,Market Front:180.168.146.187:10110;【电信】 (看穿式前置,使用监控中心生产秘)
+
+#----------------------
+#zsqh.test
+#ctp.user_id=
+#ctp.password=
+#ctp.broker_id= 6010
+#ctp.td_addr= tcp://221.12.4.116:51305
+
+#----------------------
+
+ctp.product_info=
+ctp.auth_code = 
+ctp.require_auth = false
+
+#交易中的合约编号，适用时调整
+ctp.instruments = cu2001
+
+redis.host= 127.0.0.1
+redis.port= 6379
+redis.user=
+redis.password=
+redis.db=0
+
+
+mongodb.host=
+mongodb.port=
+mongodb.user=
+mongodb.password=
+
+ctp.pub_depthmarket = ctp.pub_
+ctp.list_depthmarket = ctp.list_
+ctp.last_depthmarket = ctp.dm_
+
+log.debug = 1
+
+ctp.pubchan_event_name = zsqh-prd

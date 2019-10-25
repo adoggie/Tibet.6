@@ -1,0 +1,97 @@
+
+app_name: 'server1'
+project_name: 'carrier'
+project_version: '0.1'
+
+logging:
+  level: DEBUG
+  format: '[%(project_name)s:%(project_version)s %(app_id)s] %(levelname)s %(asctime)s %(_filename)s:%(_lineno)d [%(tags)s] %(message)s'
+  handlers:
+    - type: file
+      enable: true
+      filename: 'server.log'
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+
+    - type: file
+      enable: true
+      filename: 'trans.log'   #运单日志跟踪
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+      filter: 'trans'
+
+    - type: logtail
+      enable: false
+      logstore: 'abc'
+      access_token: 'xxxx'
+      scret_key: 'xxxx'
+      uri: 'xxxx'
+
+    - type: console
+      enable: false
+
+# celery_config:
+#   default:
+#     DISPATCHER_REDIS_REQUEST_DB : 6
+#     DISPATCHER_REDIS_REQUEST_HOST : '127.0.0.1'
+#     DISPATCHER_REDIS_REQUEST_PORT : 6379
+#     DISPATCHER_REDIS_REQUEST_PASSWORD : ''
+#     DISPATCHER_REDIS_URL_REQUEST :  'redis://:%s@%s:%s/%s'%(DISPATCHER_REDIS_REQUEST_PASSWORD,DISPATCHER_REDIS_REQUEST_HOST,DISPATCHER_REDIS_REQUEST_PORT,DISPATCHER_REDIS_REQUEST_DB)
+
+#     DISPATCHER_REDIS_REPONSE_DB : 7
+#     DISPATCHER_REDIS_REPONSE_HOST : '127.0.0.1'
+#     DISPATCHER_REDIS_REPONSE_PORT : 6379
+#     DISPATCHER_REDIS_REPONSE_PASSWORD : ''
+#     DISPATCHER_REDIS_URL_REPONSE :  'redis://:%s@%s:%s/%s'%(DISPATCHER_REDIS_REPONSE_PASSWORD,DISPATCHER_REDIS_REPONSE_HOST,DISPATCHER_REDIS_REPONSE_PORT,DISPATCHER_REDIS_REPONSE_DB)
+
+#     BROKER_URL : DISPATCHER_REDIS_URL_REQUEST       #request queue
+#     CELERY_RESULT_BACKEND : DISPATCHER_REDIS_URL_REPONSE #result queue
+
+# databases:
+
+# http:
+
+# caches:
+#   default:
+#       type: redis
+#       host: '127.0.0.1'
+#       port: 5603
+#       password: '1111'
+#       enable: true
+
+# flask_config:
+#     actived: default
+
+#     default:
+#       SQLALCHEMY_DATABASE_URI : os.environ.get('DATABASE_URL') or 'mysql://root:ptdAChu+byhzq2dCc0&MLd@127.0.0.1:3306/carrier?charset=utf8'
+#       REDIS_URL : "redis://:@localhost:6379/1"
+#       SQLALCHEMY_COMMIT_ON_TEARDOWN : True
+#       SECRET_KEY : "George Gao is a hero!"
+#       TOKEN_EXPIRE : = 3600*2
+#       DEBUG : False
+
+#       MAX_CONTENT_LENGTH : 5 * 1024 * 1024
+#       UPLOAD_FOLDER : 'upload/'
+#       FRONT_URL : UPLOAD_FOLDER + 'tender_manage/'
+#       ALLOWED_EXTENSIONS : set(['png', 'jpg', 'jpeg', 'gif', 'bmp', 'pdf'])
+
+#       M_HOST : 'smtp.163.com:465'
+#       M_SENDER : 'mynamegyz@163.com'
+#       M_PWD : os.environ.get('M_PWD') or 'gyz111111a'
+#       ADMINS : ['mynamegyz@163.com']
+
+#       SQLALCHEMY_DATABASE_URI : os.environ.get('DEV_DATABASE_URL') or 'mysql://root:root123@127.0.0.1:3306/carrier?charset=utf8'
+#       SQLALCHEMY_TRACK_MODIFICATIONS : True
+#       REDIS_URL : "redis://:@localhost:6379/4"
+#       DEBUG_TB_PROFILER_ENABLED : True
+#       DEBUG : True
+
+#     devel:
+#     testing:
+
+
+
+
+

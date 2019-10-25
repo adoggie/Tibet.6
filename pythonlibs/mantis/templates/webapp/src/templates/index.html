@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>交易策略系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+    <script type="text/javascript" src="/static/js/quotes.js" ></script>
+</head>
+<body style="margin: 20px">
+<h2 >消息推送演示</h2>
+
+<div>
+    <h3>行情信息</h3>
+
+    <div>
+        <label >商品编码</label>
+        <input id='symbol' placeholder="code.." value="m1901">
+        <button id="btn_sub" type="submit">订阅</button>
+        <button id="btn_unsub" class="" >取消订阅</button>
+
+    </div>
+    <div>
+        Quotes Counter:<p id="counter"></p>
+        <p id="sub_quotes" style="width: 400px">
+
+        </p>
+         <div>
+                <span>Code:</span> <span  id="q_symbol"></span>
+         </div>
+        <div>
+                <span>DateTime:</span> <span id="q_datetime"></span>
+         </div>
+        <div>
+                <span>LastPrice:</span> <span id="q_lastPrice"></span>
+         </div>
+        <div>
+                <span>OpenInterest:</span> <span id="q_openInterest"></span>
+         </div>
+        <div>
+                <span>AskPrice:</span> <span id="q_askPrice1"></span>
+         </div>
+        <div>
+                <span>AskVolume:</span> <span id="q_askVolume1"></span>
+         </div>
+         <div>
+                <span>BidPrice:</span> <span id="q_bidPrice1"></span>
+         </div>
+        <div>
+                <span>BidVolume:</span> <span id="q_bidVolume1"></span>
+         </div>
+    </div>
+</div>
+
+<div >
+    <p id="quotes_detail"></p>
+</div>
+
+<div>
+    <span id="status"></span>
+</div>
+</body>
+</html>

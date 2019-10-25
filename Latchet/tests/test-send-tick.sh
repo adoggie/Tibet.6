@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+redis-cli publish future_ctp_tick_m1901 '
+{"seq": 1, "askVolume4": 0, "bidVolume5": 0, "bidVolume4": 0, "bidVolume3": 0, "bidVolume2": 0, "openPrice": 3223.0, "askVolume1": 610, "askVolume3": 0, "askVolume2": 0, "askVolume5": 0, "rawData": null, "lastPrice": 3225.0, "service": "market_adapter.ctp-market-adapter", "highPrice": 3228.0, "ts": 1533691395, "source": "tick", "ts_host": 1533691395, "openInterest": 1974220.0, "preClosePrice": 3224.0, "gatewayName": "CTP", "lowerLimit": 3051.0, "exchange": "DCE", "symbol": "m1901", "time": "09:23:15.3", "volume": 479378, "flag": 0, "bidVolume1": 49, "date": "20180808", "lastVolume": 0, "askPrice1": 3226.0, "askPrice4": 0.0, "bidPrice5": 0.0, "lowPrice": 3208.0, "bidPrice1": 3225.0, "bidPrice3": 0.0, "bidPrice2": 0.0, "mp": "M", "bidPrice4": 0.0, "askPrice5": 0.0, "askPrice3": 0.0, "askPrice2": 0.0, "vtSymbol": "m1901", "upperLimit": 3371.0}'

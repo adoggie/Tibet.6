@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ctpapi/x64_linux/ThostFtdcMdApi.h" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/ctpapi/x64_linux/ThostFtdcTraderApi.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ctpapi/x64_linux/ThostFtdcUserApiDataType.h" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/ctpapi/x64_linux/ThostFtdcUserApiStruct.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/market.cpp" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/market.h" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/trade.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade_.h" charset="UTF-8" />
+  </component>
+</project>

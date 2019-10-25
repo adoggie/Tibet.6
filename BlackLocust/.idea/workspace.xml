@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="afff816f-2af0-4717-84b5-1b68b6830dcc" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/BlackLocust$tdx_quote_import.coverage" NAME="tdx_quote_import Coverage Results" MODIFIED="1571581302866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Futures/scripts" />
+    <SUITE FILE_PATH="coverage/BlackLocust$ctp_real_dayspear_run.coverage" NAME="ctp_real_dayspear_run Coverage Results" MODIFIED="1571674383204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Futures/scripts" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.39678898">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/controller.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="214">
+                    <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-109" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/timeutils.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="387">
+                    <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/ctp/ctp.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="258">
+                    <caret line="217" selection-start-line="217" selection-end-line="217" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/requests/api.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="28">
+                    <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/model/model.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="229">
+                    <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/strategy.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="387">
+                    <caret line="181" column="24" selection-start-line="181" selection-start-column="24" selection-end-line="181" selection-end-column="24" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="204">
+                    <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/CHANGELOG.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor />
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/useful.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="201">
+                    <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/base.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="214">
+                    <caret line="354" column="8" selection-start-line="354" selection-start-column="8" selection-end-line="354" selection-end-column="8" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <splitter split-orientation="horizontal" split-proportion="0.80957335">
+          <split-first>
+            <leaf>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Futures/scripts/config.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="149">
+                        <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+                      </first_editor>
+                      <second_editor relative-caret-position="-89" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="-1">
+                        <caret line="745" column="24" selection-start-line="745" selection-start-column="24" selection-end-line="745" selection-end-column="24" />
+                        <folding>
+                          <element signature="e#332#343#0" expanded="true" />
+                        </folding>
+                      </first_editor>
+                      <second_editor relative-caret-position="-119" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/Futures/scripts/ctp_init_codes.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="517">
+                        <caret line="95" column="30" lean-forward="true" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+                      </first_editor>
+                      <second_editor relative-caret-position="-119" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/nosql/model.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="235">
+                        <caret line="97" column="16" lean-forward="true" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+                      </first_editor>
+                      <second_editor relative-caret-position="-119" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Futures/scripts/tdx_quote_import.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="399">
+                        <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+                      </first_editor>
+                      <second_editor relative-caret-position="-119" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/matplotlib/pyplot.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="274">
+                        <caret line="3728" column="4" selection-start-line="3728" selection-start-column="4" selection-end-line="3728" selection-end-column="4" />
+                      </first_editor>
+                      <second_editor relative-caret-position="-119" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Futures/scripts/ctp_init_data.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="140">
+                        <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+                      </first_editor>
+                      <second_editor relative-caret-position="-119" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Futures/scripts/plot_utils.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="238">
+                        <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+                        <folding>
+                          <element signature="e#51#75#0" expanded="true" />
+                        </folding>
+                      </first_editor>
+                      <second_editor />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/file.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="170">
+                        <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+                        <folding>
+                          <element signature="e#15#27#0" expanded="true" />
+                        </folding>
+                      </first_editor>
+                      <second_editor />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py">
+                  <provider selected="true" editor-type-id="live-pycharm">
+                    <state>
+                      <first_editor relative-caret-position="-3">
+                        <caret line="714" selection-start-line="714" selection-end-line="714" />
+                        <folding>
+                          <element signature="e#332#343#0" expanded="true" />
+                        </folding>
+                      </first_editor>
+                      <second_editor relative-caret-position="-119" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>siglog_print</find>
+      <find>order_enable</find>
+      <find>log_print</find>
+      <find>acquire</find>
+      <find>start</find>
+      <find>getPosition</find>
+      <find>requests.get</find>
+      <find>exec_wr_atr</find>
+      <find>plot_view</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/controller.py" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/ctp/ctp.py" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/file.py" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/strategy.py" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/CHANGELOG.md" />
+        <option value="$PROJECT_DIR$/Futures/scripts/plot_utils.py" />
+        <option value="$PROJECT_DIR$/Futures/scripts/tdx_quote_import.py" />
+        <option value="$PROJECT_DIR$/Futures/scripts/config.py" />
+        <option value="$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/model/model.py" />
+        <option value="$PROJECT_DIR$/Futures/scripts/ctp_init_codes.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-1" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="984" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BlackLocust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlackLocust" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="BlackLocust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlackLocust" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="BlackLocust" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlackLocust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlackLocust" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="BlackLocust" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlackLocust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlackLocust" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="BlackLocust" type="462c0819:PsiDirectoryNode" />
+              <item name="Futures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlackLocust" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlackLocust" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="BlackLocust" type="462c0819:PsiDirectoryNode" />
+              <item name="Futures" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.ctp_real_dayspear_run">
+    <configuration name="ctp_real_dayspear_run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BlackLocust" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Futures/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py" />
+      <option name="PARAMETERS" value="ctp_day_spear_rb2001" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tdx_quote_import" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BlackLocust" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Futures/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Futures/scripts/tdx_quote_import.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.ctp_real_dayspear_run" />
+      <item itemvalue="Python.tdx_quote_import" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.ctp_real_dayspear_run" />
+        <item itemvalue="Python.tdx_quote_import" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_FIELDS,SHOW_INHERITED" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="afff816f-2af0-4717-84b5-1b68b6830dcc" name="Default Changelist" comment="" />
+      <created>1571385567531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571385567531</updated>
+      <workItem from="1571385569024" duration="33681000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="33681000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.682243" visible="true" weight="0.2014652" />
+      <window_info id="Structure" order="1" sideWeight="0.317757" side_tool="true" visible="true" weight="0.2014652" />
+      <window_info anchor="bottom" id="Docker" weight="0.11285266" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32988507" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3291536" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" weight="0.32988507" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32988507" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3719958" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py</url>
+          <line>406</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py</url>
+          <line>277</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py</url>
+          <line>661</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/json/encoder.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="165">
+            <caret line="183" selection-start-line="183" selection-end-line="183" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../mantis/sg/fisher/stbase/product.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="178">
+            <caret line="86" selection-start-line="86" selection-end-line="86" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/talib/__init__.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="34">
+            <caret line="2" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/pandas/io/api.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="51">
+            <caret line="3" selection-start-line="3" selection-end-line="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/product.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="185">
+            <caret line="90" selection-start-line="90" selection-end-line="90" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/urllib3/connectionpool.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="237">
+            <caret line="231" column="5" lean-forward="true" selection-start-line="231" selection-start-column="5" selection-end-line="231" selection-end-column="5" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="28">
+            <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../mantis/sg/fisher/ctp/ctp.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="107">
+            <caret line="570" column="26" selection-start-line="570" selection-start-column="26" selection-end-line="570" selection-end-column="26" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/base.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="214">
+            <caret line="354" column="8" selection-start-line="354" selection-start-column="8" selection-end-line="354" selection-end-column="8" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/timeutils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="387">
+            <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/threading.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-5893">
+            <caret line="716" column="13" selection-start-line="716" selection-start-column="8" selection-end-line="716" selection-end-column="13" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/threading.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="165" column="17" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/controller.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="214">
+            <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          </first_editor>
+          <second_editor relative-caret-position="-109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/posixpath.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="173">
+            <caret line="65" selection-start-line="65" selection-end-line="65" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/__init__.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/ctp/ctp.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="258">
+            <caret line="217" selection-start-line="217" selection-end-line="217" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/redis/connection.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="165">
+            <caret line="993" selection-start-line="993" selection-end-line="993" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/redis/client.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="165">
+            <caret line="3059" selection-start-line="3059" selection-end-line="3059" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/lockfile/mkdirlockfile.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="306">
+            <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/file.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+            <folding>
+              <element signature="e#15#27#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/strategy.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="387">
+            <caret line="181" column="24" selection-start-line="181" selection-start-column="24" selection-end-line="181" selection-end-column="24" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/lockfile/linklockfile.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="403">
+            <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.3/python_stubs/1325519474/exceptions.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="212">
+            <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          </first_editor>
+          <second_editor relative-caret-position="-77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/lockfile/__init__.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-1970">
+            <caret line="73" column="15" lean-forward="true" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Futures/scripts/plot_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="238">
+            <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <folding>
+              <element signature="e#51#75#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="274">
+            <caret line="3728" column="4" selection-start-line="3728" selection-start-column="4" selection-end-line="3728" selection-end-column="4" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Futures/scripts/tdx_quote_import.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="399">
+            <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/redis/broker.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="226">
+            <caret line="54" selection-start-line="51" selection-end-line="54" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Futures/scripts/config.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="149">
+            <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          </first_editor>
+          <second_editor relative-caret-position="-89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Futures/scripts/ctp_init_data.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="140">
+            <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Futures/scripts/ctp_real_dayspear_run.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-1">
+            <caret line="745" column="24" selection-start-line="745" selection-start-column="24" selection-end-line="745" selection-end-column="24" />
+            <folding>
+              <element signature="e#332#343#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/model/model.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="229">
+            <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/useful.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="201">
+            <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/nosql/model.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="235">
+            <caret line="97" column="16" lean-forward="true" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Futures/scripts/ctp_init_codes.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="517">
+            <caret line="95" column="30" lean-forward="true" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

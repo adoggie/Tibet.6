@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp交易服务系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+    <script type="text/javascript" src="/static/js/strategy.js" ></script>
+<style>
+    .link_button{
+        border-bottom-color: blue;border: 1px solid;
+        border-radius: 5px;
+        padding: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin: 5px;
+
+    }
+</style>
+</head>
+
+<body style="margin: 20px">
+
+<h4>
+        <a href="/ctp/"><< 返回</a>
+</h4>
+<h2 >账户信息</h2>
+
+
+<div>
+    {% for c in conns %}
+    <div>
+        <div>
+{#            连接信息：<br>#}
+        <div style="font-size: 14px;font-weight: bold;">
+            <span>ID:{{ c.id }}</span>
+            <br>
+            <span>NAME:{{ c.name }}</span>
+            <br>
+            <span>行情接口(md_broker):{{ c.md_broker }}</span>
+            <br>
+            <span>交易接口(td_api_url):{{ c.td_api_url }}</span>
+            <br>
+        </div>
+            <div style="margin: 10px">
+                <span class="link_button">
+                <a target="_blank" href="/ctp/account-info?id={{ c.id }}">账户信息</a>
+                    </span>
+                <span class="link_button">
+                <a target="_blank" href="/ctp/position-list?id={{ c.id }}">持仓信息</a>
+                    </span>
+                <span class="link_button">
+                <a target="_blank" href="/ctp/order-list?id={{ c.id }}">委托信息</a>
+                </span>
+                <span class="link_button">
+                <a target="_blank" href="/ctp/trade-list?id={{ c.id }}">成交信息</a>
+                </span>
+                <span class="link_button">
+                <a target="_blank" href="/ctp/trade-event-list?conn_url={{ c.id }}">Event List</a>
+                </span>
+            </div>
+            <h4>策略列表</h4>
+            <div>
+                <span class="link_button" >
+                                    <a href="javascript:" onclick="run_strategy_all('test')">测试All</a>
+                </span>
+
+            </div>
+            <div>
+                <ul>
+                    {% for s in c.strategies %}
+                    <div   style="margin-top: 10px;background-color: antiquewhite;padding: 5px;border-radius: 5px; ">
+
+                            <div style="border-color: blue;margin: 5px;">
+                            编号：<a href="/ctp/strategy-info/?id={{ s.strategy_id }}">{{ s.strategy_id }}</a>
+                            状态: <!-- {{ s.status }} -->
+                                <span style="margin: 5px"  id="{{ s.strategy_id }}-status">Stopped</span>
+
+                            <span style="margin-left: 20px">
+                            启动时间:
+                                <span id="{{ s.strategy_id }}-start_time">{{ s.start_time }} </span>
+                                </span>
+                            <span style="margin-left: 20px">
+                            更新时间:
+                                <span id="{{ s.strategy_id }}-up_time">{{ s.up_time }}</span>
+                            </span>
+                             <br>
+                            <span >
+                            说明: {{ s.comment }}
+                            </span>
+                            </div>
+                            <div>
+                                <div style="margin: 10px;margin-left: 10px">
+                                    <a target="_blank" href="/ctp/strategy/logs/order?strategy_id={{ s.strategy_id }}">委托记录</a>
+                                    <span style="margin-left: 5px;margin-right: 5px">|</span>
+                                    <a target="_blank" href="/ctp/strategy/logs/message?strategy_id={{ s.strategy_id }}">运行日志</a>
+
+                                    <span class="link_button " >
+                                    <a href="javascript:" onclick="run_strategy('{{ s.strategy_id }}','test')">测  试</a>
+                                    </span>
+
+                                    <span class="link_button " >
+                                    <a href="javascript:" onclick="run_strategy('{{ s.strategy_id }}','real')">运  行</a>
+                                    </span>
+                                    <span class="link_button">
+                                    <a href="javascript:" onclick="stop_strategy('{{ s.strategy_id }}')">停  止</a>
+                                    </span>
+
+                                    <!--
+                                    <span class="link_button">
+                                    <a href="javascript:" onclick="watch_detail('{{ s.strategy_id }}')"> DETAIL..</a>
+                                    </span>
+                                    -->
+                                    <span><label id="{{ s.strategy_id }}-signal-message"></label></span>
+                                </div>
+                            </div>
+                            <div>
+                                <h6> 合约代码</h6>
+                                {% for cs in s.code_list %}
+
+                                    <span style="margin-left: 20px;font-size: 20px; font-weight: bold">
+                                    <a target="_blank" href="/ctp/strategy/code/status?strategy_id={{ s.strategy_id }}&code={{ cs.code }}">{{ cs.code }}</a>
+                                    </span>
+                                    <span class="link_button" >
+                                    <a target="_blank" href="/ctp/strategy/code/status?strategy_id={{ s.strategy_id }}&code={{ cs.code }}">运行参数</a>
+                                    </span>
+                                    <span class="link_button" >
+                                    <a target="_blank" href="/ctp/strategy/charts?strategy_id={{ s.strategy_id }}&code={{ cs.code }}">K线图例</a>
+                                    </span>
+
+                                    <span class="link_button" >
+                                        <a target="_blank" href="/ctp/bar-list?code={{ cs.code }}&num=100&cycle=d">Bar-List</a>
+                                    </span>
+
+                                    <br>
+                                {% endfor %}
+                            </div>
+
+                    </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+
+</div>
+
+<script>
+    var runtimes = {};
+    var runstatus ={};
+    var strategy_ids =[];
+
+    {% for c in conns %}
+        {% for s in c.strategies %}
+        strategy_ids.push("{{  s.strategy_id }}");
+        {% endfor %}
+    {% endfor %}
+
+    function run_strategy(strategy_id,mode) {
+        let url = '/fisher/api/strategy/run';
+        $('#'+strategy_id+"-signal-message").text('');
+
+        data = {mode:mode,strategy_id:strategy_id};
+        if( mode =="real" ){
+            if(!confirm("Really?")){
+                return ;
+            }
+        }
+        $.ajax({
+                url:url,
+                method: 'post',
+                data:data,
+                success:function (data,status,xhr) {
+                    runtimes[strategy_id] = data.result; // last start time of strategy
+                },
+                error:function (xhr,status,error) {
+
+                }
+            });
+    }
+
+    function sleep (time) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    }
+
+    // 用法
+    sleep(500).then(() => {
+
+    });
+
+    function run_strategy_all(mode) {
+        for(let n in strategy_ids){
+            let strategy_id = strategy_ids[n];
+            run_strategy(strategy_id,mode);
+
+        }
+    }
+
+    function watch_detail(strategy_id) {
+        on_strategy_end(strategy_id);
+    }
+
+     function stop_strategy(strategy_id) {
+        let url = '/fisher/api/strategy/stop';
+        data = {strategy_id:strategy_id};
+        $.ajax({
+                url:url,
+                method: 'post',
+                data:data,
+                success:function (data,status,xhr) {
+
+                },
+                error:function (xhr,status,error) {
+
+                }
+            });
+    }
+
+    function on_strategy_end(strategy_id){
+        // get lastest logs
+        if( runtimes[strategy_id] == undefined){
+            return
+        }
+        $('#'+strategy_id+"-signal-message").text('');
+
+         let url = '/fisher/api/strategy/logs/lastx';
+        data = {strategy_id:strategy_id,start_time:runtimes[strategy_id],limit:100};
+        $.ajax({
+                url:url,
+                method: 'get',
+                data:data,
+                success:function (data,status,xhr) {
+                    for( let n in data.result ) {
+                        let text = data.result[n];
+                        $('#' + strategy_id + "-signal-message").append(text+'<br>');
+                    }
+                },
+                error:function (xhr,status,error) {
+
+                }
+            });
+    }
+
+    $(document).ready(function() {
+        window.setInterval(function () {
+            let url = "/fisher/api/strategy/status";
+
+            $.ajax({
+                    url:url,
+                    method: 'get',
+                    data:{},
+                    success:function (data,status,xhr) {
+                        sts = data.result;
+                        for (let n in sts){
+                            let st = sts[n];
+                            $('#'+st.strategy_id+"-start_time").text(st.start_time);
+                            $('#'+st.strategy_id+"-up_time").text(st.up_time);
+                            if(st.running){
+                                $('#'+st.strategy_id+"-status").text('Running');
+                                $('#'+st.strategy_id+"-status").css('color','red');
+
+                                runstatus[st.strategy_id] = true;
+
+
+                            }else{
+                                $('#'+st.strategy_id+"-status").text('Stopped');
+                                $('#'+st.strategy_id+"-status").css('color','grey');
+
+                                if(runstatus[st.strategy_id] == true){
+                                    on_strategy_end(st.strategy_id);
+                                    runstatus[st.strategy_id] = false;
+                                    runtimes[st.strategy_id] = undefined;
+                                }
+                                /*
+                                if(runtimes[st.strategy_id]){
+                                    on_strategy_end(st.strategy_id);
+                                    runtimes[st.strategy_id] = undefined;
+                                }
+                                */
+
+                            }
+
+                        }
+                    },
+                    error:function (xhr,status,error) {
+
+                    }
+                });
+        },2000);
+    });
+
+</script>
+
+</body>
+</html>

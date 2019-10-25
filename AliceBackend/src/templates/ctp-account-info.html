@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp行情记录</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+</head>
+<body style="margin: 20px">
+
+<h4>
+        <a href="/ctp/"><< 返回</a>
+</h4>
+<h2 >账户信息</h2>
+
+
+<h4>
+ConnUrl: {{ conn_id }}
+</h4>
+<ul>
+    <li>
+        经纪公司代码 : {{ funds.BrokerID}}
+    </li>
+     <li>
+        投资者帐号 : {{ funds.AccountID}}
+    </li>
+    <li>
+        入金金额 : {{ funds.Deposit}}
+    </li>
+
+    <li>
+        出金金额 : {{ funds.Withdraw}}
+    </li>
+
+     <li>
+        冻结的保证金 : {{ funds.FrozenMargin}}
+    </li>
+     <li>
+        冻结的资金 : {{ funds.FrozenCash}}
+    </li>
+     <li>
+        当前保证金总额 : {{ funds.CurrMargin}}
+    </li>
+
+ <li>
+        平仓盈亏 : {{ funds.CloseProfit}}
+    </li>
+    <li>
+        持仓盈亏 : {{ funds.PositionProfit}}
+    </li>
+    <li>
+        可用资金 : {{ funds.Available}}
+    </li>
+    <li style="color: red;">
+        可取资金 : {{ funds.WithdrawQuota}}
+    </li>
+    <li>
+        交易日 : {{ funds.TradingDay}}
+    </li>
+
+
+</ul>
+
+</table>
+
+</body>
+</html>

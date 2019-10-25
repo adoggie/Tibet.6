@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>交易策略系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+    <script type="text/javascript" src="/static/js/quotes.js" ></script>
+</head>
+<body style="margin: 20px">
+<h2 >CTP策略运行列表</h2>
+
+<div>
+    {% for s in strategies %}
+    <h3>[{{ s.strategy_id }} ]</h3>
+
+    <div>
+        <div>
+{#            连接信息：<br>#}
+            <span>ID:{{ s.conn_url.id }}</span>
+            <br>
+            <span>NAME:{{ s.conn_url.name }}</span>
+            <br>
+            <span>行情接口(md_broker):{{ s.conn_url.md_broker }}</span>
+            <br>
+            <span>交易接口(td_api_url):{{ s.conn_url.td_api_url }}</span>
+        </div>
+        <label >合约代码
+        {% for code in s.codes %}
+            <a href="/console/strategy/charts?strategy_id={{ s.strategy_id }}&code={{ code.code }} " target="_blank"> {{ code.code }} | </a>
+        {% endfor %}
+        </label>
+    </div>
+    {% endfor %}
+
+</div>
+
+<div >
+    <p id="quotes_detail"></p>
+</div>
+
+</body>
+</html>

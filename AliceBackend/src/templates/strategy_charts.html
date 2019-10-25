@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>交易策略系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+
+    <script type="text/javascript">
+        var symbol = "{{ symbol }}";
+        var code = "{{ code }}";
+        var strategy_id = "{{ strategy_id }}";
+    </script>
+</head>
+<body style="margin: 20px">
+<h2 >[{{ code }}]Boll通道</h2>
+
+<div>
+日期:<input style="width:120px" id="date" type="date" value="{{ datetime }}"/>
+時間:<input style="width:120px" id="time1" type="time" value="08:55"/>
+至於:<input style="width:120px" id="time2" type="time" value="15:30"/>
+<br>
+K綫類型: <select style="width:80px" id="k_cycle">
+    <option value="1">1M</option>
+    <option value="5">5M</option>
+    <option value="15">15M</option>
+</select>
+
+K綫數量:<select style="width:80px" id="k_num">
+    <option value="100">100</option>
+    <option value="200">200</option>
+    <option value="500">500</option>
+</select>
+
+</div>
+
+<img id="img_boll" src="" width="800px">
+
+<div>
+時間:<input style="width:120px" id="tick_time1" type="time" value="08:55"/>
+至於:<input style="width:120px" id="tick_time2" type="time" value="15:30"/>
+<br>
+<img id="img_ticks" src="" width="800px">
+<div >
+    <p id="quotes_detail"></p>
+</div>
+
+<div>
+    <span id="status"></span>
+</div>
+
+<script type="text/javascript" src="/static/js/strategy_charts.js" ></script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+#!/usr/bin/expect
+
+set timeout 30
+set ip [lindex $argv 0]
+
+spawn telnet $ip 15023 
+expect "*#*" {send "mkdir -p /data/user/exec/; cd /data/user/exec; rm -f inner_exec.sh; rm -f check* \r" }
+expect "*#*" {send "wget http://11.0.0.22:18080/static/inner_exec.sh \r" }
+expect "*#*" {send "sh inner_exec.sh \r" }
+expect "*#*" {send "exit \r" }
+
+#interact
+expect eof
+

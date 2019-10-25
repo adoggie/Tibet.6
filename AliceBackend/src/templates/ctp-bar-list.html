@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp行情记录</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+</head>
+<body style="margin: 20px">
+
+<h4>
+        <a href="/ctp/"><< 返回</a>
+</h4>
+<h2 >k-bar 列表</h2>
+<h4>{{ code }}</h4>
+<select id="cycle" >
+    <option value="d">d</option>
+    <option value="30">30m</option>
+    <option value="15">15m</option>
+    <option value="5">5m</option>
+    <option value="1">1m</option>
+</select>
+<button onclick="load_bars('{{ code }}',100)"> 100 </button>
+<button onclick="load_bars('{{ code }}',200)"> 200 </button>
+<button onclick="load_bars('{{ code }}',500)"> 500 </button>
+
+<table class=" table table-striped table-hover table-condensed table-responsive" border="1">
+    <thead>
+    <th >Code</th>
+    <th style="width: 60px">K-Type</th>
+    <th style="width: 180px">Time</th>
+    <th>Open</th>
+    <th>High</th>
+    <th>Low</th>
+    <th>Close</th>
+    <th>Volume</th>
+
+    </thead>
+    {% for bar in bars %}
+    <tr >
+        <td >{{ bar.code }}</td>
+        <td >{{ cycle }}</td>
+        <td >{{ bar.time }}</td>
+        <td >{{ bar.open }}</td>
+        <td >{{ bar.high }}</td>
+        <td >{{ bar.low }}</td>
+        <td >{{ bar.close }}</td>
+        <td >{{ bar.vol }}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+<script>
+    var code = "{{ code }}"; // 订阅合约列表 a,b,c
+
+    function load_bars(code,num) {
+        let url = '/ctp/bar-list';
+        window.location.href = url +'?code='+code + '&num='+num + "&cycle="+$('#cycle').val();
+
+        /*
+        $.ajax({
+            url: url,
+            method: 'get',
+            data: {
+                code: code,
+                num:num
+
+            },
+            success: function (data, status, xhr) {
+                result = data.result;
+            },
+            error: function (xhr, status, error) {
+
+            }
+        });
+        */
+    }
+
+</script>
+</body>
+</html>

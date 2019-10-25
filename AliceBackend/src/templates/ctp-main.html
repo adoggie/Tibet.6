@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp交易服务系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+    <script type="text/javascript" src="/static/js/quotes.js" ></script>
+</head>
+<body style="margin: 20px">
+
+<h2 >DashBoard</h2>
+
+
+
+    <div class="row-fluid">
+        <div class="span4">
+            <h4> 功能 </h4>
+            <ul>
+                <li><a href="/ctp/conn-list">账户列表</a></li>
+                <li><a href="/ctp/strategy-list">策略管理</a></li>
+                <li><a href="/ctp/hq-list">行情管理</a></li>
+                <li><a href="/ctp/bar-list">k线管理</a></li>
+
+            </ul>
+        </div>
+        <div class="span4">
+            <h4> 资源 </h4>
+            <ul>
+                <li> <a target="_blank" href="http://www.dce.com.cn"> 大商所 </a></li>
+                <li> <a target="_blank" href="http://www.shfe.com.cn"> 上期所 </a></li>
+                <li> <a target="_blank" href="http://www.czce.com.cn"> 郑商所 </a></li>
+                <li> <a target="_blank" href="http://www.simnow.com.cn"> 上期技术simnow </a></li>
+            </ul>
+        </div>
+
+        <div class="span4">
+            <h4> 开发 </h4>
+            <ul>
+                <li> <a target="_blank" href="https://www.bootcss.com/p/layoutit/"> Bootstrap 布局器 .. </a></li>
+                <li> <a target="_blank" href="https://cloud.tencent.com/developer/doc/1018"> Tencent的Web资源 </a></li>
+
+            </ul>
+        </div>
+</div>
+
+
+<div >
+    <p id="quotes_detail"></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+garden:
+  name : 'master'
+  id: '8888'
+  property_server_url: 'http://localhost:8089'
+  stream_server_url: 'http://localhost:954'
+  property_call_server: '127.0.0.1:8899'
+
+building_list:
+  - id : '2-1'
+    name: '单元1'
+    garden_id: '8888'
+
+innerbox_list:
+  - ip: '::ffff:127.0.0.1'
+    name: '2-1-201'
+    sn : 'A-22-123'
+    os : 'linux'
+    room_id: '2-1-201'
+    building_id: '2-1'
+    garden_id: '8888'
+
+outerbox_list:
+  - ip: '::ffff:127.0.0.1'
+    name: '单元机1层'
+    sn: 'A-11-123'
+    os: 'linux'
+    type: 'B'
+    floor: 1
+    is_primary: 1
+    building_id: '2-1'
+    garden_id: '8888'
+
+  - ip: '::ffff:127.0.0.1'
+    name: '单元机负一层'
+    sn: 'A-11-124'
+    os: 'linux'
+    type: 'B'
+    floor: -1
+    is_primary: 0
+    building_id: '2-1'
+    garden_id: '8888'
+
+  - ip: '::ffff:127.0.0.1'
+    name: '围墙机一'
+    sn: 'A-12-111'
+    os: 'linux'
+    type: 'A'
+    floor: 1
+    is_primary: 1
+    building_id: '2-1'
+    garden_id: '8888'
+
+propcallapp_list:
+  - ip: '::ffff:127.0.0.1'
+    name: '物业话机1'
+    sn: 'A-13-112'
+    os: 'android'
+    garden_id: '8888'
+
+sentryapp_list:
+  - ip: '::ffff:127.0.0.1'
+    name: '岗亭机-1'
+    sn: 'A-14-112'
+    os: 'android'
+    garden_id: '8888'

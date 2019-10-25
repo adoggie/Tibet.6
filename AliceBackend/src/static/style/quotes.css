@@ -1,0 +1,12 @@
+
+.quote_table th{
+    width: 80px;
+    text-align: center;
+    align-content: center
+
+}
+
+.quote_table td{
+    margin: 5px;
+
+}

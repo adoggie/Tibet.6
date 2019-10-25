@@ -1,0 +1,269 @@
+
+app_name: 'alice-backend'
+project_name: 'smartvision'
+project_version: '0.1'
+
+logging:
+  level: DEBUG
+  format: '%(levelname)s %(asctime)s  %(message)s'
+  message_format: '%(project_name)s:%(project_version)s %(app_id)s %(_filename)s:%(_lineno)d [%(tags)s] '
+
+  filters:
+    trans:
+      tag: 'TRANS:'   # tag 过滤
+  handlers:
+    - type: file
+      enable: true
+      filename: 'server.log'
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+
+    - type: console
+      enable: true
+
+http_trace: #自动日志记录
+  level: DEBUG
+  request:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+  response:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+
+
+datasources:
+  - name: 'mongodb'
+    class: 'mantis.fundamental.nosql.mongo.Datasource'
+    host: '127.0.0.1'
+    port: 27018
+    dbname:
+    user:
+    password:
+    enable: true
+
+  - name: 'zk_1'
+    type: 'zookeeper'
+    enable: false
+    hosts: 'localhost:2181'
+    root: '/camel'
+
+  - name: 'redis'
+    class: 'mantis.fundamental.redis.datasource.Datasource'
+    host: '127.0.0.1'
+    port: 6379
+    password: ''
+    db: 0
+    enable: false
+
+message_brokers:
+  - name: 'redis'
+    class: 'mantis.fundamental.redis.broker.MessageBroker'
+    host: '127.0.0.1'
+    port: 6379
+    password: ''
+    db: 0
+    enable: false
+    channels:
+      - name: 'ctp_contract_tick_queue'
+#        handler: 'get_message'
+        enable: true
+        type: 'queue' # or queue
+
+services:
+  - name: 'http'
+    class: 'mantis.fundamental.flask.service.FlaskService'
+    enable: true
+    block: false
+    cfgs:
+      SQLALCHEMY_DATABASE_URI : 'sqlite:////tmp/test.db'
+      SQLALCHEMY_BINDS:
+      SQLALCHEMY_TRACK_MODIFICATIONS : true
+      SQLALCHEMY_COMMIT_ON_TEARDOWN : true
+      SECRET_KEY : "abc"
+      TEMPLATES_AUTO_RELOAD: true
+      DEBUG: true
+      SEND_FILE_MAX_AGE_DEFAULT: 0
+    http:
+#      host : '172.16.109.237'
+      host : '192.168.1.252'  # 不加ip会导致初始化 gethostname 堵塞
+#      host : '192.168.99.20'  # 不加ip会导致初始化 gethostname 堵塞
+      port : 7788
+      threaded: false
+      debug: true
+      websocket: false
+
+    blueprints:
+      - package: 'http'
+        url: '/'
+        name: 'http'
+        register: true
+        modules:
+          - name: 'views'
+            url: 'ctp/'
+            routes:
+              - url: '/charts/boll'                    # url name
+                name: 'chart_boll'   # function name
+                methods: 'GET'
+
+              - url: ''                    # url name
+                name: 'main'   # function name
+                methods: 'GET'
+
+              - url: 'conn-list'
+                name: 'conn_list'
+                methods: 'GET'
+
+              - url: 'hq-list'                    # url name
+                name: 'hq_list'   # function name
+                methods: 'GET'
+
+              - url: 'account-info'
+                name: 'account_info'
+
+              - url: 'position-list'
+                name: 'position_list'
+
+              - url: 'order-list'
+                name: 'order_list'
+
+              - url: 'trade-list'
+                name: 'trade_list'
+
+              - url: 'trade-event-list'
+                name: 'event_list'
+
+              - url: 'bar-list'
+                name: 'get_bar_list'
+
+              - url: 'strategy/logs/order'                    # 成交记录（信号)
+                name: 'strategy_logs_order'   # function name
+                methods: 'GET'
+
+              - url: 'strategy/logs/message'                    # 策略运行消息
+                name: 'strategy_logs_message'   # function name
+                methods: 'GET'
+
+              - url: 'strategy/code/status'                    # 策略运行消息
+                name: 'strategy_code_status'   # function name
+                methods: 'GET'
+
+              - url: 'strategy/code/param/reset'                    # 策略运行消息
+                name: 'strategy_code_param_reset'   # function name
+                methods: 'GET'
+
+              - url: 'strategy/charts'                    # url name
+                name: 'strategy_charts'   # function name
+                methods: 'GET'
+
+
+
+
+
+          - name: 'api'
+            url: '/fisher/api'
+            routes:
+#              - url: '/trade_days'           # 获取交易日列表
+#                name: 'get_trade_days'       #
+#                methods: 'POST,GET'
+#
+#              - url: '/strategy/list'           # 获取策略列表(当日)
+#                name: 'get_strategy_list'       #
+#                methods: 'POST,GET'
+#
+#              - url: '/strategy/code/list'           # 获取策略运行证券代码信息
+#                name: 'get_code_list'       #
+#                methods: 'GET'
+#
+#              - url: '/strategy/code/logs'           # 获取证券代码运行交易日志
+#                name: 'get_code_trade_logs'       #
+#                methods: 'GET'
+#
+#              - url: '/strategy/chart/boll'           #
+#                name: 'get_array_chart_boll'       #
+#                methods: 'GET'
+
+              - url: '/strategy/ticks'           #
+                name: 'get_tick_chart'       #
+                methods: 'GET'
+
+              - url: '/strategy/chart/wr_atr'           #
+                name: 'ctp_chart_wr_atr'       #
+                methods: 'GET'
+
+              - url: '/strategy/run'           #
+                name: 'ctp_strategy_run'       #
+                methods: 'post'
+
+              - url: '/strategy/stop'           #
+                name: 'ctp_strategy_stop'       #
+                methods: 'post'
+
+              - url: '/strategy/status'           #
+                name: 'ctp_strategy_status_info'       #
+                methods: 'get'
+
+              - url: '/strategy/code/status'           #
+                name: 'ctp_strategy_code_status_info'       #
+                methods: 'get'
+
+              - url: '/strategy/logs/lastx'                    # url name
+                name: 'strategy_logs_last'   # function name
+                methods: 'GET'
+
+
+
+  - name:       'main'
+    id:     'alice-backend'
+    enable:     true
+    class:      'main.MainService'
+
+    fanout:
+      - name: 'switch0'
+        channels:
+#          - 'redis/con/queue'
+          - 'redis/concox_device_message/pubsub'
+      - name: 'logging'
+        channels:
+          - 'redis/trade.log.{service_type}/queue'
+          - 'redis/trade.log.{service_type}.{service_id}/pubsub'
+      - name: 'strategy_logging'
+        channels:
+          - 'redis/trade.strategy.log/queue'
+          - 'redis/trade.strategy.log.pub/pubsub'
+
+    checkProcesses:
+      - name: 'innerbox'
+        class: 'check_innerbox.CheckProcessInnerBox'
+        iptable: 'innerbox.txt'
+        wait: 5
+        port: 18699
+    image_store_path: '/tmp'    # 视频影像存放位置
+    _subscribed_symbols: 'm2001,RM2001,y2001,c2001,AP2001,CF2001,a2001,hc2001,rb2001,ru2001,sc1911,jd2001,cu1911,TA2001,i2001,SF001,SM001,SR001,j2001,jm2001,al2001,ni2001,pp2001'
+#    locust_home: '~/Desktop/Projects/Branches/Tibet_0.6/BlackLocust/Futures'
+    locust_home: '/home/samba/data/Porjects/Branches/Tibet_0.6/BlackLocust/Futures'
+#    latchet_server: 'http://192.168.99.20:18808'
+    latchet_server: 'http://192.168.1.252:18808'
+
+
+# qpid-receive -b localhost:5672 -a "mq_test;{create:always,node:{type:queue,durable:true}}"
+
+
+
+
+
+

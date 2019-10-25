@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp行情记录</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+</head>
+<body style="margin: 20px">
+
+<h4>
+        <a href="/ctp/conn-list"><< 返回</a>
+</h4>
+<h2 >成交列表</h2>
+
+<h4>
+ConnUrl: {{ conn_url }}
+</h4>
+
+未实现！！
+<table class="quote_table" border="1">
+    <thead>
+    <th >合约</th>
+    <th>方向</th>
+    <th>昨仓</th>
+    <th>今仓</th>
+    <th>持仓</th>
+    <th>开仓金额</th>
+    <th>平仓金额</th>
+    <th>持仓成本</th>
+    <th>占用的保证金</th>
+    <th>保证金率</th>
+    <th>交易所代码</th>
+    <th>交易日</th>
+
+
+    </thead>
+    {% for p in events %}
+    <tr >
+        <td >{{ p.InstrumentID }}</td>
+        <td >{{ p.PosiDirection }}</td>
+        <td >{{ p.YdPosition }}</td>
+        <td >{{ p.TodayPosition }}</td>
+        <td >{{ p.Position }}</td>
+        <td >{{ p.OpenAmount }}</td>
+        <td >{{ p.CloseAmount }}</td>
+        <td >{{ p.PositionCost }}</td>
+        <td >{{ p.UseMargin }}</td>
+        <td >{{ p.MarginRateByMoney }}</td>
+        <td >{{ p.ExchangeID }}</td>
+        <td >{{ p.TradingDay }}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

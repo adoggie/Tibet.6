@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1e7d456-ef20-466a-89e1-76825b0ad139" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/AliceBackend$server_webapp.coverage" NAME="server-webapp Coverage Results" MODIFIED="1571676917467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.7366352">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/templates/ctp-hq-list.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="59">
+                  <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/static/js/logs-order.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="284">
+                  <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/templates/ctp-strategy-logs-orders.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="361">
+                  <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/model/model.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="31">
+                    <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/http/views.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="143">
+                    <caret line="236" column="26" selection-start-line="236" selection-start-column="26" selection-end-line="236" selection-end-column="26" />
+                    <folding>
+                      <element signature="e#15#26#0" expanded="true" />
+                    </folding>
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/flask/utils.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="85">
+                    <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="213">
+                    <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="48" selection-end-column="17" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/etc/settings.yaml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="77">
+                  <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/templates/ctp-conn-list.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-24">
+                  <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/templates/ctp-strategy-code-status.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="319">
+                  <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/model/model.py">
+              <provider selected="true" editor-type-id="live-pycharm">
+                <state>
+                  <first_editor relative-caret-position="123">
+                    <caret line="157" column="16" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="16" />
+                  </first_editor>
+                  <second_editor relative-caret-position="-119" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>TradeRecord</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/templates/ctp-strategy-code-running-chart.html" />
+        <option value="$PROJECT_DIR$/src/static/js/strategy-code-charts.js" />
+        <option value="$PROJECT_DIR$/src/http/api.py" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/mongo.py" />
+        <option value="$PROJECT_DIR$/src/templates/ctp-main.html" />
+        <option value="$PROJECT_DIR$/src/static/js/quotes.js" />
+        <option value="$PROJECT_DIR$/src/templates/ctp-position-list.html" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/ctp/ctp.py" />
+        <option value="$PROJECT_DIR$/src/templates/ctp-hq-list.html" />
+        <option value="$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/model/model.py" />
+        <option value="$PROJECT_DIR$/src/templates/ctp-strategy-logs-orders.html" />
+        <option value="$PROJECT_DIR$/src/static/js/logs-order.js" />
+        <option value="$PROJECT_DIR$/src/templates/ctp-conn-list.html" />
+        <option value="$PROJECT_DIR$/etc/settings.yaml" />
+        <option value="$PROJECT_DIR$/src/http/views.py" />
+        <option value="$PROJECT_DIR$/src/templates/ctp-strategy-code-status.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="984" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="AliceBackend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="AliceBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="AliceBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="AliceBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="AliceBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="AliceBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="AliceBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="pythonlibs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="pythonlibs" type="462c0819:PsiDirectoryNode" />
+              <item name="mantis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="pythonlibs" type="462c0819:PsiDirectoryNode" />
+              <item name="mantis" type="462c0819:PsiDirectoryNode" />
+              <item name="fundamental" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="pythonlibs" type="462c0819:PsiDirectoryNode" />
+              <item name="mantis" type="462c0819:PsiDirectoryNode" />
+              <item name="fundamental" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="pythonlibs" type="462c0819:PsiDirectoryNode" />
+              <item name="mantis" type="462c0819:PsiDirectoryNode" />
+              <item name="sg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="pythonlibs" type="462c0819:PsiDirectoryNode" />
+              <item name="mantis" type="462c0819:PsiDirectoryNode" />
+              <item name="sg" type="462c0819:PsiDirectoryNode" />
+              <item name="fisher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AliceBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AliceBackend" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="pythonlibs" type="462c0819:PsiDirectoryNode" />
+              <item name="mantis" type="462c0819:PsiDirectoryNode" />
+              <item name="sg" type="462c0819:PsiDirectoryNode" />
+              <item name="fisher" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySupportGeventDebugging" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="server-webapp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AliceBackend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda2/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/server-webapp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.server-webapp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1e7d456-ef20-466a-89e1-76825b0ad139" name="Default Changelist" comment="" />
+      <created>1571562373678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571562373678</updated>
+      <workItem from="1571562375299" duration="28779000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="28779000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="984" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6626506" visible="true" weight="0.24481075" />
+      <window_info id="Structure" order="1" sideWeight="0.33734939" side_tool="true" visible="true" weight="0.24481075" />
+      <window_info anchor="bottom" id="SVN Repositories" weight="0.18527043" />
+      <window_info anchor="bottom" id="Docker" weight="0.3291536" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4269275" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="request" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>request</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/templates/charts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-127">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static/js/charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-strategy-code-running-chart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static/js/strategy-code-charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="65" column="47" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.3/python_stubs/1325519474/__builtin__.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="183">
+            <caret line="3402" column="8" selection-start-line="3402" selection-start-column="8" selection-end-line="3402" selection-end-column="8" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/nosql/model.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="183">
+            <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="74">
+            <caret line="1605" column="11" lean-forward="true" selection-start-line="1605" selection-start-column="11" selection-end-line="1605" selection-end-column="11" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/nosql/mongo.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-849" />
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/utils/mongo.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="255">
+            <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+            <folding>
+              <element signature="e#15#30#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/stbase/futures.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="420">
+            <caret line="228" column="26" lean-forward="true" selection-start-line="228" selection-start-column="26" selection-end-line="228" selection-end-column="26" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-position-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="40" column="16" lean-forward="true" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="57" column="81" selection-start-line="57" selection-start-column="81" selection-end-line="57" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/http/api.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="92">
+            <caret line="296" column="10" lean-forward="true" selection-start-line="296" selection-start-column="10" selection-end-line="296" selection-end-column="10" />
+            <folding>
+              <element signature="e#15#26#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/ctp/ctp.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="148">
+            <caret line="572" column="12" selection-start-line="572" selection-start-column="12" selection-end-line="572" selection-end-column="12" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static/js/quotes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-strategy-logs-message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="28" lean-forward="true" selection-end-line="69" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-hq-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/sg/fisher/model/model.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="31">
+            <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static/js/logs-order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-conn-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-strategy-logs-orders.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/flask/service.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="184">
+            <caret line="244" selection-start-line="244" selection-end-line="244" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/settings.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pythonlibs/mantis/fundamental/flask/utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="85">
+            <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/http/views.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="143">
+            <caret line="236" column="26" selection-start-line="236" selection-start-column="26" selection-end-line="236" selection-end-column="26" />
+            <folding>
+              <element signature="e#15#26#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="213">
+            <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="48" selection-end-column="17" />
+          </first_editor>
+          <second_editor relative-caret-position="-119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/ctp-strategy-code-status.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+
+
+2018.6.20
+=========
+1. DataPAServer :
+  * 增加缓存Queue，防止在 gevent 数据接收线程中进行 数据发送引发的dispatch混乱（ top half / bottom half 必须分开)
+
+2018.6.21
+=========
+1. CtpMarket
+   * 增加filter类型支持
+   * 增加获取合约之后将合约写入本地文件 ctp-contracts.txt
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/static/images/carrun_2x.png" />
+    <title>Ctp行情记录</title>
+    <link type="text/css" rel="stylesheet" href="/static/style/common.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/blue.css?v=20170527020">
+    <link type="text/css" rel="stylesheet" href="/static/style/styles.css?v=20170527020">
+    <link rel="stylesheet" href="/static/js/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/lib/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/style/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/style/quotes.css">
+
+    <script type="text/javascript"  src="/static/js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript"  src="/static/js/lib/jqueryui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+    <script type="text/javascript" src="/static/js/lib/socketio/socket.io.min.js" ></script>
+
+</head>
+<body style="margin: 20px">
+
+<h4>
+        <a href="/ctp/conn-list"><< 返回</a>
+</h4>
+<h2 >Event 列表</h2>
+
+<h4>
+ConnUrl: {{ conn_id }}
+</h4>
+
+<table class="table-striped table-hover" border="1">
+    <thead>
+    <th >IssueTime</th>
+    <th>StrategyId</th>
+    <th>Event</th>
+    <th>Code</th>
+    <th>Message</th>
+    <th>Detail</th>
+
+
+    </thead>
+    {% for p in events %}
+    <tr >
+        <td >{{ p.issue_time }}</td>
+        <td >{{ p.strategy_id }}</td>
+        <td >{{ p.event }}</td>
+        <td >{{ p.errcode }}</td>
+        <td >{{ p.errmsg }}</td>
+        <td >{{ p.detail }}</td>
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

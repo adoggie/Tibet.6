@@ -1,0 +1,30 @@
+
+2018.6.27
+=====
+[ unresolved ] 1. logger : cann't output logs on console,file,and so on..
+   mantis/fundamental/logging/logger.py
+
+2018.6.28
+======
+flask service 启动时采用新的thread来运行，结果发现这个线程调度滞后，无法进入 make_server() ，
+导致进程启动了无法响应http请求。
+ （ 排查：  web服务侦听的地址问题，如果 host : '172.16.109.133' ，则make_server()时阻塞很长时间 ，
+       换了 127.0.0.1 则无此问题 , 但用 socket.bind() 直接测试却无此问题 )
+
+    发现：
+       HTTPServer在创建同时有一函数调用导致阻塞很长时间：
+       函数： socket.getfqdn(host)
+            这个函数进行 主机名 到ip地址的搜索(时间很长)
+
+    class HTTPServer(SocketServer.TCPServer):
+        def server_bind(self):
+            """Override server_bind to store the server name."""
+            SocketServer.TCPServer.server_bind(self)
+            host, port = self.socket.getsockname()[:2]
+            self.server_name = socket.getfqdn(host)
+            self.server_port = port
+
+
+    解决方法：
+      在主机 /etc/hosts 中增加 listen的主机地址名 :
+            172.16.109.133  server.1

@@ -1,0 +1,228 @@
+
+app_name: 'testModule'
+project_name: 'testProject'
+project_version: '0.1'
+
+logging:
+  level: DEBUG
+  format: '%(levelname)s %(asctime)s  %(message)s'
+  message_format: '%(project_name)s:%(project_version)s %(app_id)s %(_filename)s:%(_lineno)d [%(tags)s] '
+
+  filters:
+    trans:
+      tag: 'TRANS:'   # tag 过滤
+  handlers:
+    - type: file
+      enable: true
+      filename: 'server.log'
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+
+    - type: file
+      enable: true
+      filename: 'trans.log'   #运单日志跟踪
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+      filter: 'trans'
+
+    - type: logtail
+      enable: false
+      logstore: 'abc'
+      access_token: 'xxxx'
+      scret_key: 'xxxx'
+      uri: 'xxxx'
+
+    - type: console
+      enable: false
+
+http_trace: #自动日志记录
+  level: DEBUG
+  request:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+  response:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+
+
+datasources:
+  - name: 'mongodb'
+    type: 'mongodb'
+    host:
+    port:
+    dbname:
+    user:
+    password:
+    enable: false
+
+  - name: 'zk_1'
+    type: 'zookeeper'
+    enable: false
+    hosts: 'localhost:2181'
+    root: '/camel'
+
+  - name: 'rabbitmq_1'
+    type: 'rabbitmq'
+    enable: false
+
+  - name: 'qpid_1'
+    type: 'qpid'
+    enable: false
+    queues:
+      - name: 'mq_mess'
+        type: 'qpid'
+        host: 'ytodev2'
+        port: 5672
+        address: "mq_3; {create: always, node: {type: topic,durable:false}}"
+        exec_thread_nr: 1 #执行线程数
+        entry:  'access.amqp.channel.data_entry' # last unit< get_message> is function object
+        enable: true
+        read: true
+        write: false
+
+
+  - name: 'kafka_1'
+    type: 'kafka'
+    enable: false
+    topics:
+      - name: 'test'
+        group: 'abcdef'  # simple_consumer if group is null
+        hosts: 'localhost:9092'
+        zookeepers: 'localhost:2181'
+        threads: 1 #执行线程数
+        entry:  'access.kafka.test.get_message' # last unit< get_message> is function object
+        enable: true
+        coroutine: false # 是否启用协程
+        access: 'read,write' # 访问模式，用于发送 或接收
+
+  - name: 'redis_server'
+    type: 'redis'
+    host: '127.0.0.1'
+    port: 5603
+    password: '1111'
+    db: 0
+    enable: true
+    dataends:
+      - name: 'market-all'
+        type: 'queue'
+      - name: 'market-ctp'
+        type: 'pub'
+
+
+services:
+  - name: 'webapi'
+#    type: 'flask'
+    run_mode: 'wsgi'
+    mainclass: 'mantis.fundamental.flask.service.FlaskService'
+    enable: true
+    cfgs:
+      SQLALCHEMY_DATABASE_URI : 'sqlite:////tmp/test.db'
+      SQLALCHEMY_BINDS:
+      SQLALCHEMY_TRACK_MODIFICATIONS : true
+      SQLALCHEMY_COMMIT_ON_TEARDOWN : true
+      SECRET_KEY : "abc"
+    http:
+      host : '127.0.0.1'
+      port : 3333
+      threaded: false
+      debug: true
+    routes:
+      - package: 'access.api.v1'
+        url: '/v1'
+        name: 'v1'
+        register: true
+        modules:
+          - name: 'car'
+            url: '/car'
+            routes:
+              - url: '/cat'   # url name
+                name: 'cat'   # function name
+                methods: 'GET,POST'
+
+  - name: 'main'
+    enable: true
+    mainclass: 'service.ctp_market.MarketService'
+    downstreams:
+      - class: 'mantis.fundamental.redis.rediscache.DataWriter'
+        filter: 'abc'                     # 满足过滤条件则执行传递
+        datasource: 'redis-server'
+        dataend: 'market-all:{topic}/pub' # queue/pub (q/p)
+        varparser: 'service.parsers.ctp_tick_symbol' # 解析出 变量匹配到
+        params:
+          - 0
+
+      - name: 'ds:redis-server/market-ctp' # Redis的发布订阅模式
+      - name: 'ds:redis-server/market-ctp-{time}-{symbol}' # Redis的发布订阅模式
+        param_parser: 'class:handlers.fieldParser'  # 返回 (time,symbol)元组
+      - name: 'class:handlers.CtpMarketIndividualPublish'
+        params:
+          - '100'
+
+  - name: 'django'
+    type: 'django'
+    django_settings: 'project.settings'
+    http:
+      host : '127.0.0.1'
+      port : 5555
+      threaded: false
+      debug: true
+
+message_dispatchers:
+  - name: 'market-data-subscribe-all'
+    enable: true
+    signal: 'ds:redis-server/market-ctp-*'  # 订阅指定匹配模式的消息
+    slots:
+      - name: 'ds:redis-server/market-all' # 写入redis的数据库0的队列 list
+        filter: 'abc'  # 满足过滤条件则执行传递
+      - name: 'ds:redis-server/market-ctp' # Redis的发布订阅模式
+      - name: 'ds:redis-server/market-ctp-{time}-{symbol}' # Redis的发布订阅模式
+        param_parser: 'class:handlers.fieldParser'  # 返回 (time,symbol)元组
+      - name: 'class:handlers.CtpMarketIndividualPublish'
+        params:
+          - '100'
+
+  - name: 'market-data-dispatch'
+    enable: true
+    signal: ''  # 直接由代码发起调用 MessageDispatcher.invoke('market-data-dispatch')
+    slots:
+      - name: 'ds:redis-server/market-all' # 写入redis的数据库0的队列 list
+        filter: 'abc'  # 满足过滤条件则执行传递
+      - name: 'ds:redis-server/market-ctp' # Redis的发布订阅模式
+      - name: 'ds:redis-server/market-ctp-{time}-{symbol}' # Redis的发布订阅模式
+        param_parser: 'class:handlers.fieldParser'  # 返回 (time,symbol)元组
+      - name: 'class:handlers.CtpMarketIndividualPublish'
+        params:
+          - '100'
+
+inspection:
+  health_interval: 20
+
+cas_config:
+  cas_server: 'https://localhost:80'
+  success_login: '/success_login'
+
+
+
+# qpid-receive -b localhost:5672 -a "mq_test;{create:always,node:{type:queue,durable:true}}"
+
+
+
+
+
+

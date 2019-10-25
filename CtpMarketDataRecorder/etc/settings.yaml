@@ -1,0 +1,160 @@
+
+app_name: 'testModule'
+project_name: 'testProject'
+project_version: '0.1'
+
+logging:
+  level: DEBUG
+  format: '%(levelname)s %(asctime)s  %(message)s'
+  message_format: '%(project_name)s:%(project_version)s %(app_id)s %(_filename)s:%(_lineno)d [%(tags)s] '
+
+  filters:
+    trans:
+      tag: 'TRANS:'   # tag 过滤
+  handlers:
+    - type: file
+      enable: true
+      filename: 'server.log'
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+
+    - type: file
+      enable: true
+      filename: 'trans.log'   #运单日志跟踪
+      encoding: 'UTF-8'
+      max_bytes: 67108864 # 64MB
+      backup_count: 10
+      filter: 'trans'
+
+    - type: console
+      enable: false
+
+http_trace: #自动日志记录
+  level: DEBUG
+  request:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+  response:
+    options:
+      header:  false
+      body:  true
+      max_size: 500 # 最大数据包长度
+    urls:
+      - match: '/'
+      - match: 'zoo/cat'
+        body:  true
+
+
+
+datasources:
+  - name: 'mongodb'
+    class: 'mantis.fundamental.nosql.mongo.Datasource'
+    host: 'mongodb'
+    port: 27017
+    dbname:
+    user:
+    password:
+    enable: true
+
+  - name: 'zk_1'
+    type: 'zookeeper'
+    enable: false
+    hosts: 'localhost:2181'
+    root: '/camel'
+
+  - name: 'redis'
+    class: 'mantis.fundamental.redis.datasource.Datasource'
+    host: 'redis'
+    port: 6379
+    password: ''
+    db: 0
+    enable: true
+
+message_brokers:
+  - name: 'redis'
+    class: 'mantis.fundamental.redis.broker.MessageBroker'
+    host: 'redis'
+    port: 6379
+    password: ''
+    db: 0
+    enable: true
+    channels:
+      - name: 'ctp.tick.list_all'
+        handler: 'handler.get_message_on_ctp_ticks'
+        enable: true
+        type: 'queue' # or queue
+        extra:
+          db_name: 'Ctp_Tick'
+
+      - name: 'ctp.bar.pub'
+        handler: 'handler.get_message_on_ctp_bars'
+        enable: true
+        type: 'queue' # or queue
+        extra:
+          db_name: 'Ctp_Bar_{scale}'
+
+services:
+  - name: 'http-subscribe'
+    class: 'mantis.fundamental.flask.service.FlaskService'
+    enable: true
+    block: false
+    cfgs:
+      SQLALCHEMY_DATABASE_URI : 'sqlite:////tmp/test.db'
+      SQLALCHEMY_BINDS:
+      SQLALCHEMY_TRACK_MODIFICATIONS : true
+      SQLALCHEMY_COMMIT_ON_TEARDOWN : true
+      SECRET_KEY : "abc"
+    http:
+#      host : '172.16.109.237'
+      host : '127.0.0.1'
+      port : 18803
+      threaded: false
+      debug: true
+
+    blueprints:
+      - package: 'http'
+        url: '/v1'
+        name: 'v1'
+        register: true
+        modules:
+          - name: 'tick'
+            url: '/ticks'
+            routes:
+              - url: '/'                    # url name
+                name: 'query_ticks'   # 查询行情tick
+                methods: 'GET'
+          - name: 'bar'
+            url: '/bars'
+            routes:
+              - url: '/'                    # url name
+                name: 'query_bars'   # 查询 bar
+                methods: 'GET'
+
+
+  - name:       'main'
+    id:     'data-res-server'
+    enable:     true
+    class:      'main.DataResourceService'
+
+    fanout:
+#      - name: 'switch0'
+#        channels:
+#          - 'redis/ctp_ticks/queue'
+#          - 'redis/ctp_tick_{symbol}/pubsub'
+      - name: 'logging'
+        channels:
+          - 'redis/trade.log.{service_type}/queue'
+          - 'redis/trade.log.{service_type}.{service_id}/pubsub'
+
+    ctp_tick_filters:
+      - 'filters.CtpTickValidator'
+
+
